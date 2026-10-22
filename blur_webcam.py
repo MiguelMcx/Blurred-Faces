@@ -2,7 +2,6 @@ import cv2
 
 model_path = "face_detection_yunet_2023mar.onnx"
 cap = cv2.VideoCapture(0)
-face_cascade = cv2.FaceDetectorYN
 ret, frame = cap.read()
 if not ret:
     cap.release()
