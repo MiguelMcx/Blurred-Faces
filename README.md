@@ -13,20 +13,37 @@ Funciona solo con CPU y detecta hasta 10 caras a la vez.
 
 ## Requisitos
 
-- Python 3
-- OpenCV
-
-```bash
-pip install opencv-python
-```
+- Python 3 instalado.
+- Una webcam.
 
 ## Uso
+
+Clona el repositorio y entra en la carpeta:
 
 ```bash
 git clone https://github.com/MiguelMcx/Blurred-Faces.git
 cd Blurred-Faces
+```
+
+### Windows
+
+```bat
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 python blur_webcam.py
 ```
+
+### macOS y Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python blur_webcam.py
+```
+
+El entorno `.venv` se crea localmente y no se sube a GitHub. La primera instalación de dependencias requiere conexión a Internet.
 
 Pulsa `q` para cerrar la ventana.
 
@@ -34,7 +51,7 @@ Pulsa `q` para cerrar la ventana.
 
 En `blur_webcam.py` se pueden cambiar:
 
-- `score_threshold` (0.9): confianza mínima para aceptar una cara. Si no detecta bien con poca luz, se puede bajar.
+- `score_threshold` (0.5): confianza mínima para aceptar una cara. Si no detecta bien con poca luz, se puede bajar.
 - `nms_threshold` (0.3): evita detecciones repetidas de la misma cara.
 - `top_k` (10): máximo de caras por fotograma.
 - `cv2.GaussianBlur(face_roi, (15, 15), 87)`: el primer valor es el tamaño del kernel; si lo subes, el desenfoque es más fuerte.

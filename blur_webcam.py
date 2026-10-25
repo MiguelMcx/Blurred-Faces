@@ -15,7 +15,7 @@ detector = cv2.FaceDetectorYN.create(
     backend_id=cv2.dnn.DNN_BACKEND_OPENCV,  # CPU
     target_id=cv2.dnn.DNN_TARGET_CPU,  # CPU
     input_size=(w, h),
-    score_threshold=0.9,  ##Confianza
+    score_threshold=0.5,  ##Confianza
     nms_threshold=0.3,  ##supresion
     top_k=10,  ##Cantidad de detecciones --probar con mas gente --
 )
