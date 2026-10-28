@@ -9,6 +9,8 @@ if not ret:
 h, w = frame.shape[:2]
 pixeles = 10  # más bajo = más anónimo (prueba 4-8)
 margen = 0.35
+ultimacara= []
+
 
 ##Aqui empezamos con el dectector
 detector = cv2.FaceDetectorYN.create(
@@ -21,6 +23,7 @@ detector = cv2.FaceDetectorYN.create(
     nms_threshold=0.3,  ##supresion
     top_k=10,  ##Cantidad de detecciones --probar con mas gente --
 )
+
 
 ##Aqui tenemos la webcam
 while True:
